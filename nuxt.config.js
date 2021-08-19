@@ -1,7 +1,7 @@
 const pkg = require('./package');
 
 export default {
-  ssr: true,
+  ssr: false,
   head: {
     title: 'Завод Металлоконструкций ЗМК',
     meta: [
