@@ -1,0 +1,105 @@
+.maket {
+  background: url('~assets/images/callMaster/back.png');
+  background-position: center;
+  padding-top: 175px;
+  margin-top: 65px;
+  margin-bottom: 100px;
+  padding-bottom: 175px;
+
+  @include mq(768) {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 50px 10px 20px 10px;
+  }
+
+  &_wrap {
+    @include maxW(1280);
+    display: flex;
+    position: relative;
+
+    @include mq(768) {
+      flex-direction: column;
+    }
+  }
+
+  &__left-block {
+    background: #fff;
+    width: 100%;
+    padding: 79px 0px 79px 35px;
+    border: 2px solid $main-bg-color;
+
+    @include mq(768) {
+      padding: 30px;
+      width: auto;
+      padding-bottom: 170px;
+    }
+
+    h2 {
+      max-width: 435px;
+      text-align: left;
+      text-transform: uppercase;
+
+      @include mq(768) {
+        @include title(23, 20, bold, $main-text-color);
+        text-align: center;
+      }
+    }
+
+    p {
+      padding-top: 20px;
+      max-width: 342px;
+
+      @include mq(768) {
+        @include title(21, 18, 300, $main-text-color);
+        text-align: center;
+        padding-top: 15px;
+      }
+    }
+  }
+
+  &__img-block {
+    position: absolute;
+    top: 2px;
+    left: 440px;
+    z-index: 2;
+
+    @include mq(768) {
+      position: relative;
+      top: initial;
+      left: initial;
+      display: flex;
+      justify-content: center;
+      width: 90vw;
+      top: -165px;
+      margin: 0 auto;
+    }
+
+    img {
+      height: 357px;
+
+      @include mq(768) {
+        width: 100%;
+        height: auto;
+      }
+      
+    }
+  }
+
+  &__right-block {
+    position: absolute;
+    right: 0;
+    bottom: -18px;
+    width: 431px;
+    z-index: 3;
+    background: #fff;
+    box-shadow: 0px 4px 20px rgba(37, 93, 146, 0.2);
+
+    @include mq(768) {
+      position: relative;
+      right: initial;
+      bottom: initial;
+      width: auto;
+      margin-top: -160px;
+    }
+  }
+}

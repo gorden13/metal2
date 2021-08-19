@@ -1,0 +1,156 @@
+@import "vue-select/src/scss/vue-select.scss";
+@import "vue-slick-carousel/dist/vue-slick-carousel.css";
+@import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+
+.style-chooser {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #E5ECF2;
+  box-sizing: border-box;
+  padding: 8px 21px;
+  
+  .vs__search::placeholder {
+    @include title(18, 15, 300, #6a7e8e);
+
+    @include mq(768) {
+      text-align: center;
+    }
+  }
+
+  .vs__dropdown-toggle {
+    border: none;
+  }
+
+  &.vs--open {
+    .vs__selected {
+      opacity: 0.7;
+    }
+  }
+
+  .vs__actions {
+    padding: 0;
+  }
+
+  .vs__open-indicator {
+    @include mq(768) {
+      transform: scale(0.8);
+    }
+    
+    &:after {
+      content: url('~/assets/images/ui/arrow-down.svg');
+    }
+  }
+
+  .vs__selected-options {
+    div {
+      display: flex;
+      align-items: center;
+      span {
+        color: white;
+        padding-left: 4px;
+      }
+    }
+  }
+  
+  .vs__dropdown-menu {
+    left: -1px;
+    padding: 0;
+
+    .vs__dropdown-option {
+      padding: 5px 0;
+      padding-left: 6px;
+
+      .lang-option {
+        display: flex;
+        align-items: center;
+        padding: 3px;
+        span {
+          font-size: 15px;
+          line-height: 17px;
+          margin-left: 7px;
+          // color: white;
+        }
+      }
+
+      // [selected] {
+        // &:after {
+        //   content: url('../assets/svg/white_mini_check.svg');
+        //   position: absolute;
+        //   right: 0;
+        //   margin-right: 15px;
+        //   color: white;
+        // }
+      // }
+    }
+
+    // .vs__dropdown-option--highlight {
+    //   background: #64D282;
+    // }
+  }
+}
+
+.slick-slider {
+
+  .slick-arrow {
+    color: black;
+    background: #ffcb38;
+    z-index: 1;
+    width: 35px;
+    height: 35px;
+
+    &:before {
+      color: #000;
+    }
+
+    &:hover, &:focus {
+      color: black;
+      background: #ffcb38;
+    }
+  }
+
+  .slick-prev {
+    left: 0;
+    &:before {
+      content: url('~/assets/images/ui/arrow-left.svg');
+    }
+  }
+
+  .slick-next {
+    right: 0;
+    &:before {
+      content: url('~/assets/images/ui/arrow-right.svg');
+    }
+  }
+
+  .slick-dots {
+    bottom: 15px;
+
+    & > li {
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+
+      &.slick-active {
+        & > button {
+          &:before {
+            background: $main-bg-color;
+          }
+        }
+      }
+
+      & > button {
+        width: 10px;
+        height: 10px;
+        padding: 0;
+
+        &:before {
+          content: '';
+          background: #E5ECF2;
+          width: 10px;
+          height: 10px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

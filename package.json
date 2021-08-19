@@ -1,0 +1,25 @@
+{
+  "name": "metal_structures",
+  "version": "1.0.0",
+  "description": "Изготовление и монтаж навесов любой сложности в городе Самара",
+  "author": "Denis Goryntsev",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.15.7",
+    "vue-flickity": "^1.2.1",
+    "vue-select": "^3.12.2",
+    "vue-slick-carousel": "^1.0.6",
+    "vue-yandex-maps": "^0.10.12"
+  },
+  "devDependencies": {
+    "fibers": "^5.0.0",
+    "sass": "^1.37.2",
+    "sass-loader": "^10.2.0"
+  }
+}

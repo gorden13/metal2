@@ -1,0 +1,47 @@
+.production {
+  margin-top: 100px;
+  background: linear-gradient(180deg, rgba(255, 203, 56, 0) 0%, rgba(255, 215, 73, 0.3) 51.04%, rgba(255, 203, 56, 0) 100%);
+
+  @include mq(768) {
+    margin-top: 0;
+    padding: 50px 10px 10px 10px;
+  }
+
+  &_wrap {
+    @include maxW(1280);
+  }
+
+  &__title {
+    max-width: 840px;
+    margin: 0 auto;
+
+    @include mq(768) {
+      @include title(29, 25, 500, $main-text-color);
+    }
+  }
+
+  &__description {
+    margin-top: 20px;
+    max-width: 1013px;
+    margin: 0 auto;
+    text-align: center;
+    @include title(35, 30, normal, $main-text-color);
+
+    @include mq(768) {
+      margin-top: 10px;
+      @include title(21, 18, normal, $main-text-color);
+    }
+  }
+
+  &__slider-block {
+    margin-top: 20px;
+
+    @include mq(768) {
+      margin-top: 40px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

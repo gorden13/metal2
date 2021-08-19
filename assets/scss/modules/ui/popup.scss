@@ -1,0 +1,88 @@
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  top: 0;
+  z-index: 10;
+  transition: 300ms all;
+
+  &-wrap {
+    background: #fff;
+    padding: 60px 30px 30px;
+    max-width: 400px;
+    position: relative;
+  }
+
+  .simple {
+    &__title {
+      @include title(33, 28, bold, $main-text-color);
+      text-align: center;
+    }
+  
+    &__text {
+      margin-top: 10px;
+      @include title(21, 18, 300, $main-text-color);
+      text-align: center;
+    }
+  }
+
+  .form {
+    padding: 30px;
+    @include mq(768) {
+      margin: 0 10px;
+    }
+
+    &__title {
+      @include title(33, 28, bold, $main-text-color);
+    }
+    &__text {
+      margin-top: 15px;
+      @include title(21, 18, 300, $main-text-color);
+    }
+
+    &__fields {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      @include mainInput();
+
+      label {
+        @include title(18, 15, normal, $main-text-color);
+      }
+    }
+
+    &__conf-block {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+
+
+  &__btn-block {
+    margin-top: 30px;
+    width: 100%;
+
+    @include finCostBtn();
+  }
+}

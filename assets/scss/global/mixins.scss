@@ -1,0 +1,64 @@
+@mixin mq($from, $to: false) {
+  @if $to {
+      @media (min-width: #{$from}px) and (max-width: #{$to}px) {
+          @content;
+      }
+  }
+
+  @else {
+      @media (max-width: #{$from}px) {
+          @content;
+      }
+  }
+}
+
+@mixin title($lineHeight, $fontSize, $fontWidth: 400, $color: #000) {
+  font-style: normal;
+  font-weight: #{$fontWidth};
+  font-size: #{$fontSize}px;
+  line-height: #{$lineHeight}px;
+  color: #{$color};
+}
+
+@mixin maxW($width: 1280) {
+  max-width: #{$width}px;
+  margin: 0 auto;
+}
+
+@mixin finCostBtn() {
+  button {
+    height: 60px;
+    width: 100%;
+    background-color: $main-bg-color;
+    border-bottom: 3px solid $main-border-color;
+
+    @include title(21, 18, 600, $main-text-color);
+    text-align: center;
+    font-variant: small-caps;
+  }
+}
+
+@mixin mainCard {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 20px rgba(37, 93, 146, 0.2);
+}
+
+@mixin mainInput {
+  input[type="text"] {
+    padding-left: 21px;
+    background: #FFFFFF;
+    border: 1px solid #E5ECF2;
+    box-sizing: border-box;
+    height: 50px;
+    outline: none;
+    width: 100%;
+    @include mq(768) {
+      text-align: center;
+      padding-left: 0;
+    }
+
+    &::placeholder {
+      @include title(18, 15, 300, #6a7e8e);
+    }
+  }
+}

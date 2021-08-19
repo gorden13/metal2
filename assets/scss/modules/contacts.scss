@@ -1,0 +1,161 @@
+.contacts {
+  background: url('~assets/images/callMaster/back.png');
+  position: relative;
+
+  @include mq(768) {
+    padding: 50px 0px 10px 0px;
+  }
+
+  &_wrap {
+    @include maxW(1280);
+    position: relative;
+  }
+
+  &__info-block {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 55px;
+    border: 2px solid $main-bg-color;
+
+    @include mq(768) {
+      padding: 30px 10px 270px 10px;
+      margin: 0 10px;
+    }
+
+    &_wrap {
+      max-width: 500px;
+
+      h2 {
+        text-transform: uppercase;
+        text-align: left;
+        font-weight: 700;
+
+        @include mq(768) {
+          text-align: center;
+          @include title(23, 20, bold, $main-text-color);
+        }
+      }
+  
+      p {
+        padding-top: 10px;
+
+        @include mq(768) {
+          padding-top: 20px;
+          text-align: center;
+          @include title(21, 18, 300, $main-text-color);
+        }
+      }
+
+      &__phone {
+        margin: 20px 0;
+        @include mq(768) {
+          text-align: center;
+        }
+
+        a {
+          @include title(47, 40, 900, $main-text-color);
+
+          @include mq(768) {
+            @include title(35, 30, 900, $main-text-color);
+          }
+        }
+      }
+
+      &__messengers {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+
+        &__links {
+          display: flex;
+          gap: 15px;
+        }
+
+        @include mq(768) {
+          gap: 10px;
+          flex-direction: column;
+        }
+
+        label {
+          margin-left: 15px;
+
+          @include mq(768) {
+            @include title(21, 18, 300, $main-text-color);
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  &__img-block {
+    position: absolute;
+    right: 2px;
+    bottom: -2px;
+
+    @include mq(768) {
+      position: relative;
+      right: auto;
+      bottom: auto;
+      transform: translate(-11px, -283px);
+      margin-bottom: -240px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__c-form {
+    padding: 30px;
+    width: 406px;
+    bottom: 100px;
+    left: 320px;
+    position: absolute;
+    @include mainCard();
+    z-index: 2;
+
+    @include mq(768) {
+      // position: relative;
+      width: auto;
+      bottom: auto;
+      left: auto;
+      padding: 30px 10px;
+      margin: 0 10px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &_block {
+      &:not(:first-child) {
+        padding-top: 30px;
+      }
+
+      h4 {
+        text-transform: uppercase;
+        @include title(21, 18, 500, $main-text-color);
+      }
+
+      p {
+        padding-top: 10px;
+        @include title(21, 18, 300, $main-text-color);
+      }
+    }
+
+    &_btn-block {
+      margin-top: 50px;
+      @include finCostBtn();
+    }
+  }
+
+  &__map {
+    margin-top: 100px;
+
+    & > .ymap-container {
+      height: 630px;
+    }
+  }
+}

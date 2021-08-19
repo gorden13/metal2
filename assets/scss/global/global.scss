@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto';
+  transition: 500ms all;
+
+  &.hide-scroll {
+    transition: 500ms all;
+    overflow: hidden;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  h2 {
+    @include title(47, 40, 500, $main-text-color);
+    text-align: center;
+
+    @include mq(768) {
+      @include title(26, 22, 500, $main-text-color);
+    }
+  }
+
+  .w100 {
+    width: 100%;
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &:checked + label {
+      &:before {
+        content: url('~assets/images/mini-check.svg');
+      }
+    }
+
+    & + label {
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+      cursor: pointer;
+
+      @include mq(768) {
+        align-items: flex-start;
+      }
+
+      &:before {
+        content: '';
+        width: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 14px;
+        background: #FFCB38;
+        margin-right: 9px;
+      }
+    }
+  }
+
+  button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: none;
+  }
+
+  .content {
+    background: url('~assets/images/about/back.png');
+    background-repeat: no-repeat;
+
+    @include mq(768) {
+      background-size: 330px 180px;
+    }
+  }
+}

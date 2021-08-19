@@ -1,0 +1,203 @@
+.materials {
+  margin-top: 50px;
+
+  @include mq(768) {
+    margin-top: 0;
+    padding: 50px 10px 0px 10px;
+    background: linear-gradient(
+      180deg, 
+    rgb(255, 203, 56, 0.1) 0%, 
+      rgb(255 220 95 / 30%) 51.04%, 
+      rgb(172 148 82 / 0%) 100%
+    );
+  }
+
+  &__main {
+    margin-bottom: 60px;
+
+    @include mq(768) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__wrap {
+    @include maxW(1280);
+  }
+
+  &__title {
+    @include mq(768) {
+      @include title(29, 25, 500, $main-text-color);
+    }
+  }
+
+  &__subtitle {
+    @include title(35, 30, normal, $main-text-color);
+    text-align: center;
+    margin: 5px 0px;
+
+    @include mq(768) {
+      @include title(21, 18, normal, $main-text-color);
+    }
+  }
+
+  &__items {
+    margin-top: 44px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 26px;
+
+    @include mq(768) {
+      margin-top: 40px;
+      gap: 5px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    width: 625px;
+    background: #fff;
+    box-shadow: 0px 4px 20px rgba(37, 93, 146, 0.2);
+
+    @include mq(768) {
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      margin-top: 90px;
+      padding: 10px;
+    }
+
+    &_img-block {
+      margin: 30px;
+
+      @include mq(768) {
+        margin: 0;
+        margin-top: -90px;
+      }
+
+      img {
+        outline-offset: -15px;
+        outline: 1px solid #fff;
+      }
+    }
+    
+    &_info-block {
+      padding: 30px 30px 30px 0px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+
+      @include mq(768) {
+        padding: 0;
+      }
+
+      &__price-block {
+        display: flex;
+        flex-direction: column;
+
+        @include mq(768) {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+
+      h4 {
+        @include title(29, 25, 600, $main-text-color);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+
+        @include mq(768) {
+          margin-top: 20px;
+          text-align: center;
+        }
+      }
+
+      span {
+        @include title(21, 18, 300, $main-text-color);
+      }
+
+      p {
+        @include title(30, 26, 500, $main-text-color);
+        text-transform: lowercase;
+      }
+
+      &__btn-block {
+        @include mq(768) {
+          margin-top: 20px;
+        }
+        
+        @include finCostBtn();
+      }
+    }
+  }
+
+  &__colors {
+    margin-top: 37px;
+    display: flex;
+
+    @include mq(768) {
+      flex-direction: column;
+    }
+
+    &-subtitle {
+      @include title(35, 30, normal, $main-text-color);
+      text-align: center;
+      margin: 5px 0px;
+
+      @include mq(768) {
+        @include title(29, 25, 500, $main-text-color);
+      }
+    }
+  }
+
+  &__prof-colors, &__enamel-colors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 49%;
+    gap: 26px;
+
+    @include mq(768) {
+      gap: 5px;
+      flex-direction: column;
+    }
+  }
+
+  @include mq(768) {
+    &__enamel-colors {
+      margin-top: 5px;
+    }
+  }
+
+  &__divider {
+    border-left: 2px solid #FFBD38;
+
+    @include mq(768) {
+      display: none;
+    }
+  }
+
+  &__prof-colors > div, &__enamel-colors > div {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    background: white;
+    box-shadow: 0px 4px 20px rgba(37, 93, 146, 0.2);
+
+    img {
+      outline-offset: -5px;
+      outline: 1px solid #fff;
+    }
+
+    h4 {
+      margin-left: 20px;
+      @include title(21, 18, 500, $main-text-color);
+      text-transform: uppercase;
+    }
+  }
+}

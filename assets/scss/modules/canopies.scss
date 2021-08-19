@@ -1,0 +1,150 @@
+.canopies {
+  min-height: 900px;
+
+  @include mq(768) {
+    padding: 50px 10px 10px 10px;
+  }
+
+  &_wrap {
+    @include maxW(1280);
+  }
+
+  &__title {
+    @include mq(768) {
+      @include title(29, 25, 500, $main-text-color);
+    }
+  }
+
+  &__tabs {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    border-radius: 12px;
+
+    @include mq(768) {
+      margin-top: 40px;
+      flex-direction: column;
+    }
+
+    & > li {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 30px;
+      background: #EDF2F6;
+      cursor: pointer;
+
+      @include mq(768) {
+        @include title(21, 18, 500, $main-text-color);
+      }
+
+      &:first-child {
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+
+        @include mq(768) {
+          border-top-right-radius: 12px;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+
+      &:last-child {
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+
+        @include mq(768) {
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+          border-bottom-left-radius: 12px;
+        }
+      }
+
+      &.active {
+        background: $main-bg-color;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+
+        @include mq(768) {
+          border-radius: 12px;
+        }
+      }
+    }
+  }
+
+  &__items {
+    // transition: 0.3s;
+    margin-top: 50px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @include mq(768) {
+      gap: 10px;
+    }
+  }
+
+  &__item {
+    @include mainCard();
+    display: flex;
+    flex-direction: column;
+
+    @include mq(768) {
+      width: 100%;
+    }
+
+    &_image-block {
+
+      img {
+        @include mq(768) {
+          width: 100%;
+        }
+      }
+    }
+    
+    &_info-block {
+      padding: 30px;
+
+      &__params {
+        color: $main-text-color;
+
+        span {
+          @include title(21, 18, 300, $main-text-color);
+        }
+      }
+
+      &__props {
+        margin-top: 20px;
+        color: $main-text-color;
+        
+        span {
+          @include title(21, 18, 300, $main-text-color);
+        }
+      }
+
+      &__price {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+
+        @include mq(768) {
+          flex-direction: column;
+        }
+
+        span {
+          @include title(21, 18, 300, $main-text-color);
+        }
+
+        strong {
+          @include title(30, 26, 500, $main-text-color);
+        }
+      }
+
+      &_btn-block {
+        margin-top: 30px;
+        @include finCostBtn();
+      }
+    }
+  }
+}

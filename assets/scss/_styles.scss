@@ -1,0 +1,29 @@
+@charset 'utf-8';
+
+@import '../fonts/Roboto/roboto.css';
+
+@import './global/variables.scss';
+@import './global/mixins.scss';
+@import './global/global.scss';
+@import './global/ui.scss';
+
+@import './modules/ui/popup.scss';
+@import './modules/ui/estimation-form.scss';
+@import './modules/ui/calculation-form.scss';
+@import './modules/ui/callback-form.scss';
+
+@import './modules/header-main.scss';
+@import './modules/navigation.scss';
+@import './modules/about.scss';
+@import './modules/constructions.scss';
+@import './modules/materials.scss';
+@import './modules//call-master';
+@import './modules/work-examples.scss';
+@import './modules/maket.scss';
+@import './modules/canopies.scss';
+@import './modules/calculation.scss';
+@import './modules/guarantees.scss';
+@import './modules/production.scss';
+@import './modules/steps.scss';
+@import './modules/reviews.scss';
+@import './modules/contacts.scss';
